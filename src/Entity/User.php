@@ -566,6 +566,12 @@ class User extends AbstractEntity implements UserInterface, PasswordAuthenticate
 
         return $this;
     }
+    public function setRedirectCount(int $redirectCount): self
+    {
+        $this->redirectCount = $redirectCount;
+
+        return $this;
+    }
 
     public function getAccountType(): ?string
     {
@@ -915,6 +921,13 @@ class User extends AbstractEntity implements UserInterface, PasswordAuthenticate
     public function removeTechnology(Technology $technology): self
     {
         $this->technologies->removeElement($technology);
+
+        return $this;
+    }
+
+    public function setTechnologies(Collection $technologies): self
+    {
+        $this->technologies = $technologies;
 
         return $this;
     }

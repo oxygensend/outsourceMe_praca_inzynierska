@@ -10,7 +10,6 @@ use Symfony\Component\HttpKernel\Attribute\AsController;
 class GetJobOfferAction extends ApiAbstractController
 {
 
-
     public function __invoke(JobOffer $jobOffer): JobOffer
     {
         $jobOffer->increaseRedirect();

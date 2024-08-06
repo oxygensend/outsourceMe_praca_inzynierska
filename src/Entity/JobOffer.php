@@ -263,6 +263,13 @@ class JobOffer extends AbstractEntity
         return $this;
     }
 
+    public function setWorkType(Collection $workType): self
+    {
+        $this->workType = $workType;
+
+        return $this;
+    }
+
     public function removeWorkType(WorkType $workType): self
     {
         $this->workType->removeElement($workType);
@@ -286,6 +293,7 @@ class JobOffer extends AbstractEntity
     {
         return $this->redirectCount;
     }
+
     public function setRedirectCount(int $redirectCount): self
     {
         $this->redirectCount = $redirectCount;
@@ -378,6 +386,13 @@ class JobOffer extends AbstractEntity
         return $this;
     }
 
+    public function setNumberOfApplications(int $numberOfApplications): self
+    {
+        $this->numberOfApplications = $numberOfApplications;
+
+        return $this;
+    }
+
     public function isArchived(): ?bool
     {
         return $this->archived;
@@ -410,6 +425,13 @@ class JobOffer extends AbstractEntity
     public function removeTechnology(Technology $technology): self
     {
         $this->technologies->removeElement($technology);
+
+        return $this;
+    }
+
+    public function setTechnologies(Collection $technologies): self
+    {
+        $this->technologies = $technologies;
 
         return $this;
     }

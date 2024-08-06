@@ -22,6 +22,7 @@ class TechnologyParser extends AbstractParser implements ParserInterface
             try {
                 $technology = new Technology();
                 $technology->setName($row['technology']);
+                $technology->setFeatured($row['featured'] === '1');
                 $this->em->persist($technology);
             } catch (\Exception $exception) {
                 $this->logger->error('Problem with setting address values ', ['e' => $exception]);

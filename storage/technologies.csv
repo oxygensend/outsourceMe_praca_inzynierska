@@ -1,0 +1,50 @@
+technology,featured
+Java,1
+Python,0
+Javascript,1
+Typescript,0
+PHP,0
+Kotlin,0
+Android,0
+C++,0
+C,1
+Elixir,0
+Spring,1
+Spring boot,1
+Kafka,0
+Rabbitmq,0
+JMS,1
+Oracle,1
+Mysql,0
+Postgres,0
+SNS,0
+AWS,0
+Azure,1
+Gcrp,0
+Go,1
+Dropwizard,0
+Quarkus,1
+Backend,1
+Frontend,1
+UI,0
+Cucumber,0
+Groovy,0
+Scala,0
+Multithreading,0
+GIT,0
+Django,0
+Flask,0
+Data Science,0
+ML,1
+ML/AI,0
+AI,0
+Symfony,0
+Laravel,0
+Micronout,0
+Kubernetes,0
+Docker,1
+Cloud computing,0
+API,0
+DDD,0
+Event-storming,0
+Data tracking,0
