@@ -34,7 +34,7 @@ use Symfony\Component\Validator\Constraints as Assert;
     ApiResource(
         operations: [
             new GetCollection(
-                paginationEnabled: false,
+                paginationEnabled: true,
                 paginationItemsPerPage: 10,
                 provider: JobOffersProvider::class
             ),
@@ -82,6 +82,7 @@ use Symfony\Component\Validator\Constraints as Assert;
                 ],
 
                 paginationEnabled: false,
+                paginationItemsPerPage: 10,
                 normalizationContext: ['groups' => ['user:jobOffers']],
             ),
             new GetCollection(

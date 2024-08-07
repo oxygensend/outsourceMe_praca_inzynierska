@@ -21,17 +21,16 @@ class UserProvider extends AbstractOfferProvider
             if ($this->cacheMaker->checkIfCacheExists()) {
                 $developers = $this->deserialize($this->cacheMaker->getFromCache());
             } else {
+                $operation = $operation->withPaginationEnabled(false);
                 $developers = $this->collectionProvider->provide($operation, $uriVariables, $context);
                 $developers = $this->orderService->calculateDevelopersForYouDisplayOrder($developers, $user);
 
-
                 $this->cacheMaker->saveToCache($this->serialize($developers, $context));
             }
-        } else {
-            $developers = $this->collectionProvider->provide($operation, $uriVariables, $context);
-        }
 
-        return $this->makePagination($developers, $operation, $context);
+            return $this->makePagination($developers, $operation, $context);
+        }
+        return $this->collectionProvider->provide($operation, $uriVariables, $context);
     }
 
 }

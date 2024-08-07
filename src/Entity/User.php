@@ -248,7 +248,7 @@ use Vich\UploaderBundle\Mapping\Annotation\UploadableField;
 
         ),
         new GetCollection(
-            paginationEnabled: false,
+            paginationEnabled: true,
             paginationItemsPerPage: 10,
             normalizationContext: ['groups' => ['user:get']],
             provider: UserProvider::class,

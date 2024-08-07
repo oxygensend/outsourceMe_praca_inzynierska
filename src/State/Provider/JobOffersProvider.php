@@ -24,17 +24,16 @@ class JobOffersProvider extends AbstractOfferProvider
             if ($this->cacheMaker->checkIfCacheExists()) {
                 $jobOffers = $this->deserialize($this->cacheMaker->getFromCache());
             } else {
+                $operation = $operation->withPaginationEnabled(false);
                 $jobOffers = $this->collectionProvider->provide($operation, $uriVariables, $context);
                 $jobOffers = $this->orderService->calculateJobOfferForYouDisplayOrder($jobOffers, $user);
                 $this->cacheMaker->saveToCache($this->serialize($jobOffers, $context));
             }
 
-        } else {
-            $jobOffers = $this->collectionProvider->provide($operation, $uriVariables, $context);
+            return $this->makePagination($jobOffers, $operation, $context);
+
         }
-
-
-        return $this->makePagination($jobOffers, $operation, $context);
+        return $this->collectionProvider->provide($operation, $uriVariables, $context);
     }
 
 }
